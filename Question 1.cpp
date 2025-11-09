@@ -37,24 +37,41 @@ int main() {
 } 
 
 int isFull(){
-    if(rear==size-1){ std::cout<<"Overflow\n" ; return 1;}else return 0;
+    if(rear==size-1){
+        std::cout<<"Overflow\n";
+        return 1;
+    }
+    else return 0;
 }
 int isEmpty(){
-    if(rear==-1&&front==-1){ std::cout<<"Underflow\n" ; return 1;}else return 0;
+    if(rear==-1&&front==-1){
+        std::cout<<"Underflow\n";
+        return 1;
+    }
+    else return 0;
 }
-void enqueue(){ int data;
-    if(isFull()==0 ){ if(front==-1){front=0;}
+void enqueue(){ 
+    int data;
+    if(isFull()==0 ){
+        if(front==-1){
+            front=0;
+        }
     rear=rear+1; 
-       std::cout<<"Enter:"; std::cin>>data;
-         queue[rear]=data; 
-        
+    std::cout<<"Enter:";
+    std::cin>>data;
+    queue[rear]=data;    
     } 
 }
 
-void dequeue(){if(isEmpty()==0){int data=queue[front];
+void dequeue(){
+    if(isEmpty()==0){
+        int data=queue[front];
      if(front==rear){
-            front=rear=-1;}else front=front+1; 
-       std::cout<<"Deleted:"<<data<< "\n";
+            front=rear=-1;
+     }
+     else
+         front=front+1; 
+    std::cout<<"Deleted:"<<data<< "\n";
 }
 }
 
