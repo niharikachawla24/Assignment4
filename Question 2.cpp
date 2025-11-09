@@ -37,26 +37,46 @@ int main() {
 } 
 
 int isFull(){
-    if((rear+1)%size==front){ std::cout<<"Overflow\n" ; 
-    return 1;}
-    else return 0;
+    if((rear+1)%size==front){
+        std::cout<<"Overflow\n"; 
+        return 1;
+    }
+    else
+        return 0;
 }
 int isEmpty(){
-    if(rear==-1&&front==-1){ std::cout<<"Underflow\n" ; return 1;}else return 0;
+    if(rear==-1&&front==-1){
+        std::cout<<"Underflow\n";
+        return 1;
+    }
+    else
+        return 0;
 }
-void enqueue(){ int data;
-    if(isFull()==0 ){ if(front==-1 && rear==-1)
-    {front=rear=0;}else
-   { rear=(rear+1)%size; }
-       std::cout<<"Enter:"; std::cin>>data;
-         queue[rear]=data; 
+
+void enqueue(){
+    int data;
+    if(isFull()==0 ){
+        if(front==-1 && rear==-1){
+            front=rear=0;
+        }
+        else{
+            rear=(rear+1)%size;
+        }
+        std::cout<<"Enter:";
+        std::cin>>data;
+        queue[rear]=data; 
         
     } 
 }
 
-void dequeue(){if(isEmpty()==0){int data=queue[front];
-     if(front==rear){
-            front=rear=-1;}else front=(front+1)%size; 
+void dequeue(){
+    if(isEmpty()==0){
+        int data=queue[front];
+    if(front==rear){
+        front=rear=-1;
+    }
+    else
+       front=(front+1)%size; 
        std::cout<<"Deleted:"<<data<< "\n";
 }
 }
@@ -66,9 +86,11 @@ void display() {
         std::cout << "Queue is empty\n";
     } else {
         std::cout << "Elements: ";
-        int i=front; while(true) {
+        int i=front;
+        while(true) {
             std::cout << queue[i] << " ";
-            if (i == rear) break;
+            if (i == rear)
+                break;
             i=(i+1)%size;
         }
         std::cout << "\n";
