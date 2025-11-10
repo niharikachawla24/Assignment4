@@ -4,29 +4,51 @@ class Queue1{
     int front=-1; 
     int rear=-1;
     int size=50;
-   int isEmpty(){ if((front==-1&&rear==-1)||front>rear){
-      return 1;  
-     } else return 0;
-    }
-  int  isFull(){if(rear==size-1){return 1;}
-    else return 0; }
-    char peek(){ if(!isEmpty())
-        {return Queue[front];}
-        else return '\0';
+   int isEmpty(){
+       if((front==-1&&rear==-1)||front>rear){
+           return 1;  
+     }
+       else
+           return 0;
+}
+  int  isFull(){
+      if(rear==size-1){
+          return 1;
+      }
+    else
+          return 0;
+}
+    char peek(){
+        if(!isEmpty()){
+            return Queue[front];
+        }
+        else
+            return '\0';
     }
     
-   void enqueue(char x){ if(isFull()){std::cout<<"Queue full!";}        else{ if(front==-1&&rear==-1)
-        { front=0; 
-        rear=0; } else {rear=rear+1;}
+   void enqueue(char x){
+       if(isFull()){
+           std::cout<<"Queue full!";
+       }
+       else if(front==-1&&rear==-1){
+               front=0; 
+               rear=0;
+               {
+       else {
+               rear=rear+1;}
         Queue[rear]=x; 
-   }
+   
     }
-    char dequeue(){ if(isEmpty()){std::cout<<"Empty queue!";
-    return '\0';} 
-    else
-   { char z= Queue[front];
+    char dequeue(){
+        if(isEmpty()){
+            std::cout<<"Empty queue!";
+            return '\0';
+        } 
+    else{
+        char z= Queue[front];
         front=front+1;
-       return z;}
+        return z;
+    }
       }
 };
 void NonRepeating(char Array[],int array_size){
