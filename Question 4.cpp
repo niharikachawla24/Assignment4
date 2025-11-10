@@ -59,9 +59,9 @@ void NonRepeating(char Array[], int array_size) {
 
     for (int i = 0; i < array_size; i++) {
         q1.enqueue(Array[i]);
-        freq[(unsigned char)Array[i]]++;
+        freq[Array[i]]++;
 
-        while (!q1.isEmpty() && freq[(unsigned char)q1.peek()] > 1) {
+        while (!q1.isEmpty() && freq[q1.peek()] > 1) {
             q1.dequeue();
         }
 
